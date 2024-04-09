@@ -1,0 +1,134 @@
+:root {
+  --background: rgb(11, 11, 16);
+  /* --card : rgb(11, 11, 16); */
+  --input: rgb(29, 33, 40);
+
+  --dark: rgb(18, 21, 25);
+  --font: rgb(219, 219, 219);
+}
+
+* {
+  color: var(--font);
+  font-family: "Century gothic";
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background);
+}
+
+span.fi {
+  width: 40px;
+  height: 30px;
+  /* filter: saturate(100); */
+}
+
+h2 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 20px  black;
+}
+.background {
+  background-image: url("/world.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--dark);
+  width: 70%;
+  margin: auto;
+  padding: 50px;
+  height: fit-content;
+  display: grid;
+  gap:40px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flag {
+  display: flex;
+  align-items: center;
+  & span {
+    margin-right: 20px;
+  }
+}
+
+.flag + div{
+  margin-left: 15px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input {
+  background-color: var(--input);
+  border: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 5px;
+  padding-left: 20px;
+  grid-column: 1/span 2;
+
+  &:focus {
+    outline: none;
+}
+
+}
+
+.output {
+  border-image: linear-gradient(#186deb, #3cb99c ,#5fb2e9,#4acaac ,#4e8deb,#15755f , #5fe9de ) 20 ; 
+  border-width: 3px; 
+  border-style: solid;
+  padding: 25px 70px; 
+  width: 100%;
+  background-color: var(--input);
+  height: auto;
+  display: grid;
+  /* grid-template-columns: 3fr 2fr; */
+  gap: 15px;
+  grid-column: 1/span 2;
+
+}
+
+
+
+.output div{
+  font-size: 20px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  input ,  .output{
+  grid-column: 1;
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+   width: 90%;
+   padding: 30px
+  }
+h2{
+  font-size: 30px;
+}
+  .output{
+  padding: 25px 30px; 
+
+  }
+
+}
